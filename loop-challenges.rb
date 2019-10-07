@@ -144,3 +144,20 @@ end
 # puts either_2_4([2, 2, 4, 4])
 # puts either_2_4([3, 4, 2, 6])
 # puts either_2_4([3, 4, 4, 6])
+
+
+def can_balance (list) #-------------------------------------------
+    list.each do |i|
+        num = list[i]
+        sum = sum + num
+        num2 = list[i + 1..list.size - 1]
+        sum2 = num2 + sum2
+        if sum = sum2
+            return true
+        end
+    end
+    return false
+end
+
+ puts can_balance([1, 1, 2])
+ puts can_balance([1, 1, 1, 2])

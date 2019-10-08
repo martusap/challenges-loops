@@ -133,7 +133,7 @@ end
 # puts max_span([2, 3, 3, 2], 2)
 # puts max_span([2, 3, 2], 2)
 
-def either_2_4(list) #-----------------------------------------------------
+def either_2_4(list)
     i = 0
     n = 1
     (list.size - 1).times do
@@ -166,18 +166,42 @@ end
 # puts either_2_4([3, 4, 4, 6])
 
 
-# def can_balance (list) #-------------------------------------------
-#     list.each do |i|
-#         num = list[i]
-#         sum = sum + num
-#         num2 = list[i + 1..list.size - 1]
-#         sum2 = num2 + sum2
-#         if sum = sum2
-#             return true
-#         end
-#     end
-#     return false
-# end
+def can_balance (list)
+    list.each do |i|
+        num = list[i]
+        sum = sum + num
+        num2 = list[i + 1..list.size - 1]
+        sum2 = num2 + sum2
+        if sum = sum2
+            return true
+        end
+    end
+    return false
+end
 
 #  puts can_balance([1, 1, 2])
 #  puts can_balance([1, 1, 1, 2])
+
+
+def merge(list, list2)
+    i = 0
+    if list[i] < list2[i]
+        merge = ([list[i], list2[i]])
+    else 
+        merge = ([list2[i], list[i]])
+    end
+    i = 1
+    (list.size.times do 
+        if list[i] < list2[i]
+            merge = ([merge, list[i], list2[i]])
+        else 
+            merge = ([merge, list2[i], list[i]])
+        end
+        i += 1
+    end
+
+    puts merge
+
+end
+
+puts merge([2, 4], [1, 3])

@@ -113,6 +113,26 @@ end
 
 # puts middle_way([2, 3, 2, 8], [7, 4, 2, 6]) 
 
+def max_span(list, number)
+    i = 0
+    n = -1
+    while list[i] != number
+        i += 1
+    end
+    while list[n] != number
+        n += -1
+    end
+    if list.size == 1 || list.size == 2
+        return list.size
+    end
+    puts list.size + n - i - 1
+end
+
+# puts max_span([2, 2], 2)
+# puts max_span([2], 2)
+# puts max_span([2, 3, 3, 2], 2)
+# puts max_span([2, 3, 2], 2)
+
 def either_2_4(list) #-----------------------------------------------------
     i = 0
     n = 1
@@ -146,18 +166,18 @@ end
 # puts either_2_4([3, 4, 4, 6])
 
 
-def can_balance (list) #-------------------------------------------
-    list.each do |i|
-        num = list[i]
-        sum = sum + num
-        num2 = list[i + 1..list.size - 1]
-        sum2 = num2 + sum2
-        if sum = sum2
-            return true
-        end
-    end
-    return false
-end
+# def can_balance (list) #-------------------------------------------
+#     list.each do |i|
+#         num = list[i]
+#         sum = sum + num
+#         num2 = list[i + 1..list.size - 1]
+#         sum2 = num2 + sum2
+#         if sum = sum2
+#             return true
+#         end
+#     end
+#     return false
+# end
 
- puts can_balance([1, 1, 2])
- puts can_balance([1, 1, 1, 2])
+#  puts can_balance([1, 1, 2])
+#  puts can_balance([1, 1, 1, 2])
